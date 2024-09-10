@@ -1,0 +1,110 @@
+/* Ensure the body takes up full height and remove default margins */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Container for the whole page */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Prevents overflow */
+}
+
+/* Section for the cards */
+.cards-container {
+  flex: 3; /* Takes up 3/4 of the width */
+  padding: 20px;
+  overflow-y: auto; /* Adds scroll if necessary */
+  background-color: #f4f4f4; /* Light background color for contrast */
+}
+
+/* Section for the total price */
+.total-price-container {
+  flex: 1; /* Takes up 1/4 of the width */
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+  border-left: 2px solid #ddd; /* Divider line */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For positioning the floating effect */
+}
+
+/* Floating effect */
+.total-price-container::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  z-index: -1;
+}
+
+/* Styling for the total price text */
+#total-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Card styling */
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some padding to the card body */
+.card-body {
+  padding: 15px;
+}
+
+/* Additional styles */
+.logo-container {
+  overflow: hidden;
+  width: fit-content;
+}
+
+.logo {
+  transition: transform 2s;
+}
+
+.logo-c:hover .logo {
+  transform: translateX(60px);
+}
+
+.navbar {
+  background-color: rgba(174, 238, 234, 0.234);
+}
+
+#qte {
+  display: flex;
+  justify-content: center;
+}
+
+#qte p {
+  font-size: 20px;
+}
+
+#like {
+  display: flex;
+  justify-content: space-between;
+}
+
+#cards {
+  cursor: pointer;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  justify-content: space-between;
+}
+
+.liked {
+  color: red;
+}
